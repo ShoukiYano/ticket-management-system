@@ -1,0 +1,22 @@
+プロジェクトの基本情報:
+
+groupId: プロジェクトの一意の識別子（ここでは com.example）。
+artifactId: プロジェクトの一意の名前（ここでは ticket-management-system）。
+version: プロジェクトのバージョン（ここでは 0.0.1-SNAPSHOT）。
+name: プロジェクトの名前（ここでは ticket-management-system）。
+description: プロジェクトの説明（ここでは Demo project for Spring Boot）。
+親プロジェクトの情報:
+
+groupId, artifactId, version: Spring Bootの親プロジェクトを指定。
+relativePath: 親プロジェクトをリポジトリから検索するための相対パス。
+プロパティの設定:
+
+java.version: プロジェクトで使用するJavaのバージョン（ここでは 17）。
+依存関係:
+
+プロジェクトが使用するライブラリやフレームワークを定義。
+例として、Spring Bootスターター（spring-boot-starter-data-jpa, spring-boot-starter-security, spring-boot-starter-data-jdbc, spring-boot-starter-thymeleaf, spring-boot-starter-web）、PostgreSQLドライバ（postgresql）、Lombok、テスト用依存関係（spring-boot-starter-test, spring-security-test）など。
+ビルドプラグイン:
+
+Mavenプロジェクトのビルドを行うためのプラグインを定義。
+例として、Spring BootのMavenプラグイン（spring-boot-maven-plugin）。

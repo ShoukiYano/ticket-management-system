@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>チケット詳細</title>
+	<link rel="stylesheet" th:href="@{/css/styles.css}">
+	<script th:src="@{/js/main.js}"></script>
+</head>
+
+<body>
+    <div class="hamburger-menu">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div class="sidebar">
+        <a href="javascript:void(0)" class="close-btn">&times;</a>
+        <a th:href="@{/login}">ログアウト</a>
+    </div>
+	<div class="container">
+		<h2>チケット詳細</h2>
+		<div class="ticket-detail">
+			<div class="detail-item">
+				<label>ID:</label>
+				<span th:text="${ticket.id}"></span>
+			</div>
+			<div class="detail-item">
+				<label>タイトル:</label>
+				<span th:text="${ticket.title}"></span>
+			</div>
+			<div class="detail-item">
+				<label>説明:</label>
+				 <span th:utext="${#strings.replace(ticket.description, '\n', '<br>')}"></span>
+			</div>
+			<div class="detail-item">
+				<label>ステータス:</label>
+				<span th:text="${ticket.status}"></span>
+			</div>
+			<div class="detail-item">
+				<label>担当者:</label>
+				<span th:text="${ticket.assignedTo}"></span>
+			</div>
+			<div class="actions">
+				<a class="btn" th:href="@{/tickets}">戻る</a>
+				<a class="btn btn-edit" th:href="@{/tickets/{id}/edit(id=${ticket.id})}">編集</a>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

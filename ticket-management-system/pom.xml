@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Mavenのプロジェクト定義ファイル -->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <!-- モデルのバージョンを指定 -->
+    <modelVersion>4.0.0</modelVersion>
+    <!-- 親プロジェクトの情報を設定 -->
+    <parent>
+        <!-- 親プロジェクトのグループID -->
+        <groupId>org.springframework.boot</groupId>
+        <!-- 親プロジェクトのアーティファクトID -->
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <!-- 親プロジェクトのバージョン -->
+        <version>3.2.5</version>
+        <!-- リポジトリから親プロジェクトを検索 -->
+        <relativePath /> <!-- lookup parent from repository -->
+    </parent>
+    <!-- プロジェクトのグループID -->
+    <groupId>com.example</groupId>
+    <!-- プロジェクトのアーティファクトID -->
+    <artifactId>ticket-management-system</artifactId>
+    <!-- プロジェクトのバージョン -->
+    <version>0.0.1-SNAPSHOT</version>
+    <!-- プロジェクトの名前 -->
+    <name>ticket-management-system</name>
+    <!-- プロジェクトの説明 -->
+    <description>Demo project for Spring Boot</description>
+    <!-- プロパティの設定 -->
+    <properties>
+        <!-- 使用するJavaのバージョンを指定 -->
+        <java.version>17</java.version>
+    </properties>
+    <!-- 依存関係の定義 -->
+    <dependencies>
+        <!-- Spring Data JPAのスターター -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        <!-- Spring Securityのスターター -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+        <!-- Spring Data JDBCのスターター -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jdbc</artifactId>
+        </dependency>
+        <!-- Thymeleafのスターター -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
+        <!-- Spring Webのスターター -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <!-- ThymeleafとSpring Securityの統合 -->
+        <dependency>
+            <groupId>org.thymeleaf.extras</groupId>
+            <artifactId>thymeleaf-extras-springsecurity6</artifactId>
+        </dependency>
+        <!-- 開発ツールのスターター -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <scope>runtime</scope>
+            <optional>true</optional>
+        </dependency>
+        <!-- PostgreSQLのJDBCドライバ -->
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <!-- Lombokの依存関係 -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <!-- テスト用のSpring Bootスターター -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <!-- Spring Securityのテスト用依存関係 -->
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <!-- ビルドプラグインの設定 -->
+    <build>
+        <plugins>
+            <!-- Spring BootのMavenプラグイン -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+</project>

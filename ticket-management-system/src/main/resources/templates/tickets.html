@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>チケット一覧</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+    <script th:src="@{/js/main.js}"></script>
+</head>
+
+<body>
+    <div class="hamburger-menu">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div class="sidebar">
+        <a href="javascript:void(0)" class="close-btn">&times;</a>
+        <a th:href="@{/login}">ログアウト</a>
+    </div>
+    <h2>チケット一覧</h2>
+    <a th:href="@{/tickets/new}">Create New Ticket</a>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>タイトル</th>
+                <th>ステータス</th>
+                <th>担当者</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="ticket : ${tickets}">
+                <td th:text="${ticket.id}"></td>
+                <td th:text="${ticket.title}"></td>
+                <td th:text="${ticket.status}"></td>
+                <td th:text="${ticket.assignedTo}"></td>
+                <td>
+                    <a th:href="@{/tickets/{id}(id=${ticket.id})}">詳細</a>
+                    <a th:href="@{/tickets/{id}/edit(id=${ticket.id})}">編集</a>
+                    <form th:action="@{/tickets/{id}/delete(id=${ticket.id})}" method="post" style="display:inline">
+                        <button type="submit">削除</button>
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

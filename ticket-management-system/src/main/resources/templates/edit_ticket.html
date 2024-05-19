@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>チケット編集</title>
+	<link rel="stylesheet" th:href="@{/css/styles.css}">
+	<script th:src="@{/js/main.js}"></script>
+</head>
+
+<body>
+    <div class="hamburger-menu">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div class="sidebar">
+        <a href="javascript:void(0)" class="close-btn">&times;</a>
+        <a th:href="@{/login}">ログアウト</a>
+    </div>
+	<h2>チケット編集</h2>
+	<form th:action="@{/tickets/{id}(id=${ticket.id})}" method="post" th:object="${ticket}">
+		<div>
+			<label>タイトル:</label>
+			<input type="text" th:field="*{title}" required>
+		</div>
+		<div>
+			<label>説明:</label>
+			<textarea th:field="*{description}" required></textarea>
+		</div>
+		<div>
+			<label>ステータス:</label>
+			<input type="text" th:field="*{status}" required>
+		</div>
+		<div>
+			<label>担当者:</label>
+			<input type="text" th:field="*{assignedTo}" required>
+		</div>
+		<div class="actions">
+			<button type="submit">更新</button>
+			<a class="btn" th:href="@{/tickets}">戻る</a>
+		</div>
+	</form>
+</body>
+
+</html>

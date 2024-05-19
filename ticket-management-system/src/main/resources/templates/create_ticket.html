@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- ページのタイトルを設定 -->
+    <title>チケット作成</title>
+    <!-- CSSスタイルシートをリンク -->
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+    <!-- JavaScriptファイルをリンク -->
+    <script th:src="@{/js/main.js}"></script>
+</head>
+<body>
+    <!-- ハンバーガーメニュー -->
+    <div class="hamburger-menu">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <!-- サイドバー -->
+    <div class="sidebar">
+        <!-- サイドバーを閉じるボタン -->
+        <a href="javascript:void(0)" class="close-btn">&times;</a>
+        <!-- ログアウトリンク -->
+        <a th:href="@{/login}">ログアウト</a>
+    </div>
+    <!-- ページの見出し -->
+    <h2>チケット作成</h2>
+    <!-- チケット作成フォーム -->
+    <form th:action="@{/tickets}" method="post" th:object="${ticket}">
+        <!-- タイトル入力フィールド -->
+        <div>
+            <label>タイトル:</label>
+            <input type="text" th:field="*{title}" required>
+        </div>
+        <!-- 説明入力フィールド -->
+        <div>
+            <label>説明:</label>
+            <textarea th:field="*{description}" required></textarea>
+        </div>
+        <!-- ステータス入力フィールド -->
+        <div>
+            <label>ステータス:</label>
+            <input type="text" th:field="*{status}" required>
+        </div>
+        <!-- 担当者入力フィールド -->
+        <div>
+            <label>担当者:</label>
+            <input type="text" th:field="*{assignedTo}" required>
+        </div>
+        <!-- アクションボタン（作成ボタンと戻るリンク） -->
+        <div class="actions">
+            <button type="submit">作成</button>
+            <a class="btn" th:href="@{/tickets}">戻る</a>
+        </div>
+    </form>
+</body>
+</html>
